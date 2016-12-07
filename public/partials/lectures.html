@@ -1,0 +1,110 @@
+<div ng-controller = "lectureController">
+  <ol class="breadcrumb">
+    <li><a href="#subjects" class = "breadtrail">Subjects</a></li>
+    <li><a href="#" class = "breadtrail">Lectures</a></li>
+    <button type="button" class="btn btn-default"  id = "btn-success" id data-toggle="modal" data-target="#myModal">Enroll</button>
+  </ol>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Congratulations!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You've been enrolled in this course! You can find it under 'My Courses' for easy access. Happy learning!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="area"></div>
+  
+  <nav class="main-menu">
+        <ul>
+
+           <li>
+                <a href>
+                    <i><img src="../media/logo.png"></i>
+                </a>      
+            </li> 
+            <li>
+                <a href="#subjects">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span class="nav-text">Subjects</span>
+                </a>      
+            </li>
+
+            <li class="has-subnav">
+                <a href="#mycourses">
+                    <i class="fa fa-bookmark fa-2x"></i>
+                    <span class="nav-text">My Courses</span>
+                </a>       
+            </li>
+
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span class="nav-text">User</span>
+                </a>
+            </li>
+
+             <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-sign-out fa-2x"></i>
+                    <span class="nav-text">Log Out</span>
+                </a>
+            </li>
+
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-copyright fa-2x"></i>
+                    <span class="nav-text">PuStack</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+  <div class="container" id = "lecturecont">
+    <div class="row">
+      <div class="col-sm-4" ng-repeat="lecture in lectures.lectureList" ng-click="lectures.selectedLecture = lecture">
+        <div class="wrapper">
+          <div class="card radius shadowDepth1">
+
+            <div class="card__image border-tlr-radius">
+              <img src="{{lecture.imageURL}}" alt="image" class="border-tlr-radius">
+            </div>
+
+            <div class="card__content card__padding">
+
+
+              <div class="card__meta">
+                <a href="#">{{lecture.author}}</a>
+              </div>
+
+              <article class="card__article">
+                <h2><a href="#videos">{{lecture.name}}</a></h2>
+                <p>
+                  <span style = "font-size:15px;" class = "descrip">{{lecture.description}}</span>
+                  <span><a style = "font-size:15px; color: #388DB0;" href = "#">Read More</a></span>
+                </p>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  
+</div>
+</div>
